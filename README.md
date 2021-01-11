@@ -1,99 +1,121 @@
-# ecmaScript-library-template [![GitHub license](https://img.shields.io/github/license/varora1406/ecmascript-library-template?style=flat)](https://github.com/varora1406/ecmascript-library-template/blob/master/LICENSE) [![Tests](https://github.com/varora1406/ecmascript-library-template/workflows/CI/badge.svg)](https://github.com/varora1406/ecmascript-library-template/actions) [![codecov](https://codecov.io/gh/varora1406/ecmascript-library-template/branch/master/graph/badge.svg)](https://codecov.io/gh/varora1406/ecmascript-library-template) ![npm](https://img.shields.io/npm/varora1406/ecmascript-library-template)
+## Doubly Linked List in EcmaScript(JavaScript) [⚒ Under progress]
 
-<p align="center">
-<small><b>Click below to create a new GitHub repository using this template:</b></small>
-<br/><br/><a href="https://github.com/varora1406/ecmascript-library-template/generate">
-<img src="https://img.shields.io/badge/use%20this-template-blue?logo=github">
-</a>
-</p>
+🚀🚀 Production ready implementation of [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) in EcmaScript
+
+## Example
+
+```js
+import DoublyLinkedList from "doubly-linked-list";
+
+const list = new DoublyLinkedList();
+list.insert(1);
+list.insert(2);
+
+list.contains(2); // true
+list.remove(2);
+list.contains(2); // false
+```
+
+## API
 
 ---
 
-**This EcmaScript library template** allows you to easily develop, collaborate on and publish a EcmaScript library with all the modern tooling you'd expect from the current EcmaScript ecosystem.
+### Insertion
 
-**Why should you use this?** One of the hidden challenges of authoring opensource EcmaScript libraries is to provide a project that is easy to contribute to. You want people to join your project. Doing so requires a good amount of boilerplate: testing, code coverage, dependencies maintenance, release scripts, tooling requirements (Node.js, Yarn and which versions are we using again?), code editor configuration, formatting, linting... Well, this is the goal of this template: **to provide sensible and modern defaults to all those subjects**.So that once set up, you can focus on ⌨️ coding, 🙌 collaborating and 🚀 shipping.
+- #### insert(element)
 
-**The goals of the template are to:**
+  add element to end of the list
 
-- Ease the contribution of the library by providing reproducible environments for developers and CI
-- Automate as much as possible, from testing to releasing and upgrading dependencies
-- Provide good defaults for users of [Visual Studio Code](https://code.visualstudio.com/)
+  ```js
+  const list = new DoublyLinkedList();
+  list.add(2);
+  list.add(1);
+  list.add(3);
 
-**Features:**
+  // list - [2 -> 1 -> 3]
+  ```
 
-- [EditorConfig](https://editorconfig.org/): easy contributions from any code editor.
-- [ESLint](https://eslint.org/): launched in the `test` script.
-- [Prettier](https://prettier.io/): launched in the `test` script, with markdown, EcmaScript, CSS and JSON files support (including automatic [`package.json` formatting](https://github.com/matzkoh/prettier-plugin-packagejson)).
-- Automatic VSCode formatting and linting: using VSCode extensions recommendations and workspace settings in .`vscode/` folder.
-- [Yarn](http://yarnpkg.com/) version pinning: via [Yarn policies](https://classic.yarnpkg.com/en/docs/cli/policies/), so anyone contributing or any system accessing your library will use the same Yarn version without having to think about it.
-- [Node.js](https://nodejs.org/) version pinning: via [nvm](https://github.com/nvm-sh/nvm), so anyone contributing or any system accessing your library will use the same Node.js version without having to think about it.
-- [Jest](https://jestjs.io/): launched in the `test` script, also with the right VSCode settings providing a testing workflow inside VSCode using [`vscode-jest`](https://github.com/jest-community/vscode-jest) extension.
-- [GitHub actions](https://github.com/features/actions): automatic testing and releasing from GitHub: npm publish and GitHub releases are automatically created. Note that the package.json in your repository is never updated (the version is always `0.0.0-development`), only the one in npm is updated. This is surprising at first but as long as you display the published version in your README (like this template does) then you're fine. Find more information about this in the [semantic-release documentation](https://semantic-release.gitbook.io/semantic-release/support/faq#why-is-the-package-jsons-version-not-updated-in-my-repository).
-- [semantic-release](https://semantic-release.gitbook.io/semantic-release/): allows for automatic releases based on semver.org and [conventional commits specification](https://www.conventionalcommits.org/). The defaults are taken from the [Angular git commit guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
-- [Codecov](https://codecov.io/): launched in the `test` script on CI, ensures code coverage does not decrease on pull requests _(free for public and private repositories)_.
-- [Renovate](https://renovate.whitesourcesoftware.com/) configurated with the [EcmaScript library preset](https://docs.renovatebot.com/presets-config/#configjs-lib): this will automatically update your dependencies by opening pull request for you to approve or not. So you never have to think about it _(free for public and private repositories)_.
+- #### prepend(element)
 
-## Setup
+  add element to start of the list
 
-Using this template requires a bit of setup, but way less than if you had to start from 0. Here's what you need to do:
+  ```js
+  const list = new LinkedList();
+  list.add(2);
+  list.add(1);
+  list.prepend(3);
+  list.add(4);
+  // list - [3 -> 2 -> 1 -> 4];
+  ```
 
-**Required steps:** (needed every time you want to use the template)
+### Deletion
 
-1. [Create a new repository](https://github.com/new) on GitHub based on this template
-1. [Setup renovate](https://github.com/apps/renovate) for your new repository. If you previously installed the Renovate application to your account then this is just a box to tick when creating the repository
-1. [Clone the new repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-1. Change the package name and description in `package.json`
-1. [Setup Codecov](https://github.com/apps/codecov) for your new repository. If you previously installed the Codecov application to your account then this is just a box to tick when creating the repository
-1. Setup semantic releases: run `yarn semantic-release-cli setup` in a terminal (This will ask for your npm and GitHub credentials)
-1. Add the previously generated `GH_TOKEN` and `NPM_TOKEN` secrets to the [GitHub secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets) of the new repository
-1. Install dependencies: run `yarn` in your terminal
-1. **Develop your library**: change code in `lib/`
-1. **Test your library**: you can either see tests results inside VSCode directly or run `yarn jest --watch`
-1. **Check formatting of your code**: run `yarn check-formatting` in your terminal
-1. **Create your first release**: [open a pull request](https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request) on your project, wait for tests to pass, merge and 💥 your library will be automatically released to npm and a GitHub release will be created
+- #### remove()
 
-**Optional steps:** (needed only if you're doing them for the first time)
+  removes element from the list
 
-1. If you're not using VSCode, if your editor has no EditorConfig support, then [setup EditorConfig](https://editorconfig.org/#download) [EditorConfig support](https://editorconfig.org/)
-1. Make sure you have [npm 2fa auth-only](https://docs.npmjs.com/about-two-factor-authentication#authorization-only) configured. Releases can't be automated if you have 2fa setup for both authentication and publish. See https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication-for-plugins
-1. [Install nvm](https://github.com/nvm-sh/nvm)
-1. [Install yarn](https://classic.yarnpkg.com/en/docs/install#alternatives-stable)
+  ```js
+  const list = new DoublyLinkedList();
+  list.add(2);
+  list.add(1);
+  list.add(3);
+  // list - [2 -> 1 -> 3]
 
-## Status and next steps
+  list.remove(1);
+  // list - [2 -> 3]
+  ```
 
-The template is still pretty new (March 2020) and was done to author EcmaScript libraries using ECMAScript modules for Node.js >= 12. Gradually, or given requests, **we could update it to support**:
+### Search
 
-- Using different CI environments than GitHub actions
-- Authoring browser libraries
-- Generating `README.md` table of contents automatically
-- Better default `README.md` content (Install, API, Examples, ...)
-- `create-EcmaScript-library` command line that would get most of the setup done easily
-- `.github` Pull requests template, issues templates, CONTRIBUTING files
-- add or change scripts to allow for auto-formatting
-- provide documentation on how to protect branches on GitHub
-- provide scripts to easily open a pull request once a branch is created
-- provide a way to check for semantic commits in PR
-- contributors list
-- https://github.com/apps/semantic-pull-requests
+- #### contains()
 
-If you'd like to participate, if you have bugs or new ideas, [open an issue](https://github.com/varora1406/ecmascript-library-template/issues/new) or a pull request.
+  check if element is present in the list or not
 
-## Recipes
+  ```js
+  const list = new DoublyLinkedList();
+  list.add(2);
+  list.add(1);
+  list.add(3);
+  // list - [2 -> 1 -> 3]
 
-### Using `yarn link`
+  list.contains(4); //false
+  list.contains(2); //true
+  ```
 
-To use `yarn link` efficiently, do this:
+### Traverse
 
-```bash
-> cd my-library
-> yarn link
-> yarn build --watch
-> cd ../my-other-library
-> yarn link my-library
-```
+- #### traverse()
 
-### Reformating all code
+  iterate on list from start to end
 
-```bash
-yarn format
-```
+  ```js
+  const list = new DoublyLinkedList();
+  list.add(2);
+  list.add(1);
+  list.add(3);
+  // list - [2 -> 1 -> 3]
+
+  const generator = list.traverse();
+  for (const value of generator) {
+    console.log(value);
+  }
+  // console - 2, 1, 3
+  ```
+
+- #### reverseTraversal()
+
+  iterate on list from end to start
+
+  ```js
+  const list = new DoublyLinkedList();
+  list.add(2);
+  list.add(1);
+  list.add(3);
+  // list - [2 -> 1 -> 3]
+
+  const generator = list.reverseTraversal();
+  for (const value of generator) {
+    console.log(value);
+  }
+  // console - 3, 1, 2
+  ```
