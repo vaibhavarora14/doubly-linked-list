@@ -43,7 +43,7 @@
     "babel-jest": "26.0.1",
     "eslint": "7.4.0",
     "eslint-plugin-import": "2.22.0",
-    "eslint-plugin-jest": "23.18.0",
+    "eslint-plugin-jest": "23.20.0",
     "git-cz": "^4.6.2",
     "jest": "26.1.0",
     "jest-date-mock": "1.0.8",
