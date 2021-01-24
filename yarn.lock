@@ -6855,7 +6855,6 @@ npm@^6.0.0, npm@^6.10.3:
     cmd-shim "^3.0.3"
     columnify "~1.5.4"
     config-chain "^1.1.12"
-    debuglog "*"
     detect-indent "~5.0.0"
     detect-newline "^2.1.0"
     dezalgo "~1.0.3"
@@ -6870,7 +6869,6 @@ npm@^6.0.0, npm@^6.10.3:
     has-unicode "~2.0.1"
     hosted-git-info "^2.8.8"
     iferr "^1.0.2"
-    imurmurhash "*"
     infer-owner "^1.0.4"
     inflight "~1.0.6"
     inherits "^2.0.4"
@@ -6889,14 +6887,8 @@ npm@^6.0.0, npm@^6.10.3:
     libnpx "^10.2.2"
     lock-verify "^2.1.0"
     lockfile "^1.0.4"
-    lodash._baseindexof "*"
     lodash._baseuniq "~4.6.0"
-    lodash._bindcallback "*"
-    lodash._cacheindexof "*"
-    lodash._createcache "*"
-    lodash._getnative "*"
     lodash.clonedeep "~4.5.0"
-    lodash.restparam "*"
     lodash.union "~4.6.0"
     lodash.uniq "~4.5.0"
     lodash.without "~4.4.0"
@@ -8255,10 +8247,10 @@ saxes@^5.0.0:
   dependencies:
     xmlchars "^2.2.0"
 
-semantic-release-cli@5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/semantic-release-cli/-/semantic-release-cli-5.3.1.tgz#65bb7f28591031ae4152fa0b0d4b667b20c0ba8c"
-  integrity sha512-ez+/C8optoqIi7U8s6SVVVttQ1AunMt8VSY2CW9Zm9jddd9rQdiLwHMRO2APDsR4QV8I86tNo56+XssCSfWmpQ==
+semantic-release-cli@5.4.3:
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/semantic-release-cli/-/semantic-release-cli-5.4.3.tgz#660beeecdfbaf7232e2ef75d2892282ff918581b"
+  integrity sha512-m0o7ofAf1jWDva6FWhIiqABYbywV81iQW8nkrhlDTA+J59YmSxJ1wW2FQ5xHuJCBtO56i4A4McK1kdxNjqNb7Q==
   dependencies:
     babel-polyfill "^6.26.0"
     babel-preset-env "^1.6.1"
